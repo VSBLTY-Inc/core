@@ -3,8 +3,6 @@ package activity
 import (
 	"fmt"
 
-	"path"
-
 	"github.com/VSBLTY-Inc/core/support"
 	"github.com/VSBLTY-Inc/core/support/log"
 

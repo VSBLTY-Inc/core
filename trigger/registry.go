@@ -3,7 +3,6 @@ package trigger
 import (
 	"fmt"
 	"github.com/VSBLTY-Inc/core/support/log"
-	"path"
 
 	"github.com/VSBLTY-Inc/core/support"
 )

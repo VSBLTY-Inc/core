@@ -2,7 +2,6 @@ package activity
 
 import (
 	"fmt"
-	"path"
 
 	"github.com/VSBLTY-Inc/core/support/log"
 

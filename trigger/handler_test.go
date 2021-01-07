@@ -2,7 +2,7 @@ package trigger
 
 import (
 	"context"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/log"
 	"testing"
 
 	"github.com/VSBLTY-Inc/core/action"
