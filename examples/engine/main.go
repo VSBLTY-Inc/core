@@ -39,13 +39,13 @@ func main() {
 
 	cfg, err := engine.LoadAppConfig(cfgJson, cfgCompressed)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Failed to create engine 1: %v\n", err)
 		os.Exit(1)
 	}
 
 	e, err := engine.New(cfg, engine.ConfigOption(cfgEngine, cfgCompressed))
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to create engine: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Failed to create engine 2: %v\n", err)
 		os.Exit(1)
 	}
 

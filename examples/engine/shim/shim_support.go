@@ -20,13 +20,13 @@ func init() {
 
 	cfg, err := engine.LoadAppConfig(cfgJson, cfgCompressed)
 	if err != nil {
-		log.RootLogger().Errorf("Failed to create engine: %s", err.Error())
+		log.RootLogger().Errorf("Failed to create engine 3: %s", err.Error())
 		os.Exit(1)
 	}
 
 	flogoEngine, err = engine.New(cfg, engine.ConfigOption(cfgEngine, cfgCompressed), engine.DirectRunner)
 	if err != nil {
-		log.RootLogger().Errorf("Failed to create engine: %s", err.Error())
+		log.RootLogger().Errorf("Failed to create engine 4: %s", err.Error())
 		os.Exit(1)
 	}
 }
