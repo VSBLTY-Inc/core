@@ -19,6 +19,7 @@ var handlerLog = log.ChildLogger(log.RootLogger(), "handler")
 
 type Handler interface {
 	Name() string
+	Logger() log.Logger
 	Settings() map[string]interface{}
 	Schemas() *SchemaConfig
 	Handle(ctx context.Context, triggerData interface{}) (map[string]interface{}, error)
@@ -33,6 +34,7 @@ type actImpl struct {
 
 type handlerImpl struct {
 	runner    action.Runner
+	logger    log.Logger
 	config    *HandlerConfig
 	acts      []actImpl
 	eventData map[string]string
@@ -50,18 +52,32 @@ func (h *handlerImpl) Settings() map[string]interface{} {
 	return h.config.Settings
 }
 
+func (h *handlerImpl) Logger() log.Logger {
+	return h.logger
+}
+
 func (h *handlerImpl) SetDefaultEventData(data map[string]string) {
 	h.eventData = data
 }
 
-func NewHandler(config *HandlerConfig, acts []action.Action, mf mapper.Factory, ef expression.Factory, runner action.Runner) (Handler, error) {
+func NewHandler(config *HandlerConfig, acts []action.Action, mf mapper.Factory, ef expression.Factory, runner action.Runner, logger log.Logger) (Handler, error) {
 
 	if len(acts) == 0 {
 		return nil, errors.New("no action specified for handler")
 	}
 
-	handler := &handlerImpl{config: config, acts: make([]actImpl, len(acts)), runner: runner}
+	var handlerLogger log.Logger
+	if log.CtxLoggingEnabled() {
+		if config.parent != nil {
+			handlerLogger = log.ChildLoggerWithFields(logger, log.FieldString("handlerName", config.Name), log.FieldString("triggerId", config.parent.Id))
+		} else {
+			handlerLogger = log.ChildLoggerWithFields(logger, log.FieldString("handlerName", config.Name))
+		}
+	} else {
+		handlerLogger = log.ChildLogger(logger, "handler")
+	}
 
+	handler := &handlerImpl{config: config, acts: make([]actImpl, len(acts)), runner: runner, logger: handlerLogger}
 	var err error
 
 	//todo we could filter inputs/outputs based on the metadata, maybe make this an option

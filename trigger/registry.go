@@ -13,7 +13,7 @@ var (
 	triggerLoggers   = make(map[string]log.Logger)
 )
 
-var triggerLogger = log.ChildLogger(log.RootLogger(), "trigger")
+var rootLogger = log.RootLogger()
 
 func Register(trigger Trigger, f Factory) error {
 
@@ -35,9 +35,7 @@ func Register(trigger Trigger, f Factory) error {
 
 	triggerFactories[ref] = f
 
-	triggerName := path.Base(ref) //todo get this from the descriptor or register trigger with name as well
-	triggerLoggers[ref] = log.ChildLogger(triggerLogger, triggerName)
-
+	triggerLoggers[ref] = log.CreateLoggerFromRef(rootLogger, "trigger", ref)
 	return nil
 }
 
