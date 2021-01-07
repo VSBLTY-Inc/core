@@ -3,14 +3,14 @@ package app
 import (
 	"fmt"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/schema"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/managed"
-	"github.com/project-flogo/core/trigger"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/mapper"
+	"github.com/VSBLTY-Inc/core/data/schema"
+	"github.com/VSBLTY-Inc/core/support"
+	"github.com/VSBLTY-Inc/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/managed"
+	"github.com/VSBLTY-Inc/core/trigger"
 )
 
 func (a *App) createSharedActions(actionConfigs []*action.Config) (map[string]action.Action, error) {

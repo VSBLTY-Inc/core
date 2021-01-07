@@ -1,11 +1,11 @@
 package mapper
 
 import (
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper/config"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/mapper/config"
+	"github.com/VSBLTY-Inc/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 type ExprMapperFactory struct {

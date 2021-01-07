@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/project-flogo/core/data/property"
+	"github.com/VSBLTY-Inc/core/data/property"
 	"os"
 	"testing"
 	"time"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/resolve"
 	"github.com/stretchr/testify/assert"
 )
 

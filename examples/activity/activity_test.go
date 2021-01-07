@@ -3,8 +3,8 @@ package sample
 import (
 	"testing"
 
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/support/test"
+	"github.com/VSBLTY-Inc/core/activity"
+	"github.com/VSBLTY-Inc/core/support/test"
 	"github.com/stretchr/testify/assert"
 )
 

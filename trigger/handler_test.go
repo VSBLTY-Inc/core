@@ -5,12 +5,12 @@ import (
 	"github.com/project-flogo/core/support/log"
 	"testing"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/engine/runner"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/mapper"
+	"github.com/VSBLTY-Inc/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/engine/runner"
 	"github.com/stretchr/testify/assert"
 )
 

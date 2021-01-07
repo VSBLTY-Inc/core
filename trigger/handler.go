@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/property"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/coerce"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/mapper"
+	"github.com/VSBLTY-Inc/core/data/property"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 var handlerLog = log.ChildLogger(log.RootLogger(), "handler")

@@ -7,9 +7,9 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/managed"
+	"github.com/VSBLTY-Inc/core/app"
+	"github.com/VSBLTY-Inc/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/managed"
 )
 
 var managedServices []managed.Managed

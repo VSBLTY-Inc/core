@@ -2,14 +2,14 @@ package mapper
 
 import (
 	"fmt"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/coerce"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/path"
+	"github.com/VSBLTY-Inc/core/support/log"
 	"reflect"
 	"strings"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/path"
-	"github.com/project-flogo/core/support/log"
 )
 
 var objectMapperLog = log.ChildLogger(log.RootLogger(), "object-mapper")

@@ -3,8 +3,8 @@ package connection
 import (
 	"fmt"
 
-	"github.com/project-flogo/core/app/resolve"
-	"github.com/project-flogo/core/support"
+	"github.com/VSBLTY-Inc/core/app/resolve"
+	"github.com/VSBLTY-Inc/core/support"
 )
 
 type Config struct {

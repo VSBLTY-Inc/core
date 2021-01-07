@@ -5,10 +5,10 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/data/schema"
-	"github.com/project-flogo/core/engine/secret"
-	"github.com/project-flogo/core/support"
+	"github.com/VSBLTY-Inc/core/app"
+	"github.com/VSBLTY-Inc/core/data/schema"
+	"github.com/VSBLTY-Inc/core/engine/secret"
+	"github.com/VSBLTY-Inc/core/support"
 )
 
 var appName, appVersion string

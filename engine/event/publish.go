@@ -1,7 +1,7 @@
 package event
 
 import (
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 const ()

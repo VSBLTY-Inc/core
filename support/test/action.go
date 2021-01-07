@@ -1,8 +1,8 @@
 package test
 
 import (
-	"github.com/project-flogo/core/app/resource"
-	"github.com/project-flogo/core/support/service"
+	"github.com/VSBLTY-Inc/core/app/resource"
+	"github.com/VSBLTY-Inc/core/support/service"
 )
 
 func NewActionInitCtx() *ActionInitCtx {
