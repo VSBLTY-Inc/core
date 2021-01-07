@@ -1,6 +1,6 @@
 package mapper
 
-import "github.com/project-flogo/core/data"
+import "github.com/VSBLTY-Inc/core/data"
 
 type Factory interface {
 	NewMapper(mappings map[string]interface{}) (Mapper, error)

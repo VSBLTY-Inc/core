@@ -3,14 +3,14 @@ package script
 import (
 	"fmt"
 
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/expression/script/gocc/ast"
-	"github.com/project-flogo/core/data/expression/script/gocc/errors"
-	"github.com/project-flogo/core/data/expression/script/gocc/lexer"
-	"github.com/project-flogo/core/data/expression/script/gocc/parser"
-	"github.com/project-flogo/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/expression/script/gocc/ast"
+	"github.com/VSBLTY-Inc/core/data/expression/script/gocc/errors"
+	"github.com/VSBLTY-Inc/core/data/expression/script/gocc/lexer"
+	"github.com/VSBLTY-Inc/core/data/expression/script/gocc/parser"
+	"github.com/VSBLTY-Inc/core/data/resolve"
 
-	_ "github.com/project-flogo/core/data/expression/function/builtin"
+	_ "github.com/VSBLTY-Inc/core/data/expression/function/builtin"
 )
 
 func init() {

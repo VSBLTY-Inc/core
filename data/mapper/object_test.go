@@ -2,9 +2,9 @@ package mapper
 
 import (
 	"encoding/json"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/property"
-	"github.com/project-flogo/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/property"
+	"github.com/VSBLTY-Inc/core/data/resolve"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

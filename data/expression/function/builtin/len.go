@@ -3,8 +3,8 @@ package builtin
 import (
 	"reflect"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/expression/function"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/expression/function"
 )
 
 func init() {

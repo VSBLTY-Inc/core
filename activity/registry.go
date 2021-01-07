@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"path"
 
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/support"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 var (

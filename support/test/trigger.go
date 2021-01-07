@@ -4,14 +4,14 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/engine/runner"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/trigger"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/mapper"
+	"github.com/VSBLTY-Inc/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/engine/runner"
+	"github.com/VSBLTY-Inc/core/support/log"
+	"github.com/VSBLTY-Inc/core/trigger"
 )
 
 func InitTrigger(factory trigger.Factory, tConfig *trigger.Config, actions map[string]action.Action) (trigger.Trigger, error) {

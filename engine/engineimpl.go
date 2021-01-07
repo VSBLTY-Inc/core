@@ -4,16 +4,16 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/data/property"
-	"github.com/project-flogo/core/engine/channels"
-	"github.com/project-flogo/core/engine/runner"
-	"github.com/project-flogo/core/engine/secret"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/managed"
-	"github.com/project-flogo/core/support/service"
-	"github.com/project-flogo/core/support/trace"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/app"
+	"github.com/VSBLTY-Inc/core/data/property"
+	"github.com/VSBLTY-Inc/core/engine/channels"
+	"github.com/VSBLTY-Inc/core/engine/runner"
+	"github.com/VSBLTY-Inc/core/engine/secret"
+	"github.com/VSBLTY-Inc/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/managed"
+	"github.com/VSBLTY-Inc/core/support/service"
+	"github.com/VSBLTY-Inc/core/support/trace"
 )
 
 // engineImpl is the type for the Default Engine Implementation

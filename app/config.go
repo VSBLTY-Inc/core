@@ -3,12 +3,12 @@ package app
 import (
 	"os"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/app/resource"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/schema"
-	"github.com/project-flogo/core/support/connection"
-	"github.com/project-flogo/core/trigger"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/app/resource"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/schema"
+	"github.com/VSBLTY-Inc/core/support/connection"
+	"github.com/VSBLTY-Inc/core/trigger"
 )
 
 const (

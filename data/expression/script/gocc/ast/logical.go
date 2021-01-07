@@ -2,11 +2,11 @@ package ast
 
 import (
 	"fmt"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/resolve"
 
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/expression/script/gocc/token"
+	"github.com/VSBLTY-Inc/core/data/coerce"
+	"github.com/VSBLTY-Inc/core/data/expression/script/gocc/token"
 )
 
 func NewBoolExpr(left, operand, right interface{}) (Expr, error) {

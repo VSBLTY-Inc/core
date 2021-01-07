@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/data/expression"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/data/expression"
+	"github.com/VSBLTY-Inc/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/data/resolve"
 )
 
 // Config is the configuration for a Trigger

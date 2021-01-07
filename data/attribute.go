@@ -3,7 +3,7 @@ package data
 import (
 	"encoding/json"
 
-	"github.com/project-flogo/core/data/schema"
+	"github.com/VSBLTY-Inc/core/data/schema"
 )
 
 func NewAttribute(name string, dataType Type, value interface{}) *Attribute {

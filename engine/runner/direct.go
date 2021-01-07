@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/project-flogo/core/action"
+	"github.com/VSBLTY-Inc/core/action"
 )
 
 // DirectRunner runs an action synchronously

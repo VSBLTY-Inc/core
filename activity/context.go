@@ -1,10 +1,10 @@
 package activity
 
 import (
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/trace"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/trace"
 )
 
 // Context describes the execution context for an Activity.

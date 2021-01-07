@@ -6,16 +6,16 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/app"
-	"github.com/project-flogo/core/app/resource"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/engine"
-	"github.com/project-flogo/core/engine/runner"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/trigger"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/app"
+	"github.com/VSBLTY-Inc/core/app/resource"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/coerce"
+	"github.com/VSBLTY-Inc/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/engine"
+	"github.com/VSBLTY-Inc/core/engine/runner"
+	"github.com/VSBLTY-Inc/core/support"
+	"github.com/VSBLTY-Inc/core/trigger"
 )
 
 // App is the structure that defines an application

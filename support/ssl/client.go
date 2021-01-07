@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/project-flogo/core/data/coerce"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/data/coerce"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 const ConfigSchema = `

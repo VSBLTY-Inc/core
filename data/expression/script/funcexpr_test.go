@@ -3,11 +3,11 @@ package script
 import (
 	"bytes"
 	"fmt"
-	"github.com/project-flogo/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/data/resolve"
 	"testing"
 
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/expression/function"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/expression/function"
 	"github.com/stretchr/testify/assert"
 )
 

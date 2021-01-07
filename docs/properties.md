@@ -154,7 +154,7 @@ type ExternalResolver interface {
 ```go
 package sampleresolver
 
-import "github.com/project-flogo/core/data/property"
+import "github.com/VSBLTY-Inc/core/data/property"
 
 
 type SamplePropertyResolver struct {

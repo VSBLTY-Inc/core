@@ -1,8 +1,8 @@
 package activity
 
 import (
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/data/mapper"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 // Activity is an interface for defining a custom Activity Execution

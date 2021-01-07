@@ -1,13 +1,13 @@
 package test
 
 import (
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/metadata"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/trace"
+	"github.com/VSBLTY-Inc/core/activity"
+	"github.com/VSBLTY-Inc/core/data"
+	"github.com/VSBLTY-Inc/core/data/mapper"
+	"github.com/VSBLTY-Inc/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/data/resolve"
+	"github.com/VSBLTY-Inc/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/trace"
 )
 
 var logger = log.ChildLogger(log.RootLogger(), "test")

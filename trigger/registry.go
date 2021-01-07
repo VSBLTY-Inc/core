@@ -2,10 +2,10 @@ package trigger
 
 import (
 	"fmt"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/log"
 	"path"
 
-	"github.com/project-flogo/core/support"
+	"github.com/VSBLTY-Inc/core/support"
 )
 
 var (

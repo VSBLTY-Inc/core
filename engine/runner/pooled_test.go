@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/project-flogo/core/data/metadata"
+	"github.com/VSBLTY-Inc/core/data/metadata"
 
-	"github.com/project-flogo/core/action"
+	"github.com/VSBLTY-Inc/core/action"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

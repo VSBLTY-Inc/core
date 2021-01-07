@@ -5,7 +5,7 @@ import (
 	"runtime/debug"
 	"sync"
 
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 type Emitter struct {

@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/project-flogo/core/action"
-	"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
+	"github.com/VSBLTY-Inc/core/action"
+	"github.com/VSBLTY-Inc/core/support"
+	"github.com/VSBLTY-Inc/core/support/log"
 )
 
 // PooledRunner is a action runner that queues and runs a action in a worker pool

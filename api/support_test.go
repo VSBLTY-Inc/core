@@ -3,7 +3,7 @@ package api
 import (
 	"testing"
 
-	sampleActivity "github.com/project-flogo/core/examples/activity"
+	sampleActivity "github.com/VSBLTY-Inc/core/examples/activity"
 	"github.com/stretchr/testify/assert"
 )
 

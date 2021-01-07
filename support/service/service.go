@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/project-flogo/core/support/managed"
+	"github.com/VSBLTY-Inc/core/support/managed"
 )
 
 // Service is an interface for defining/managing a service
