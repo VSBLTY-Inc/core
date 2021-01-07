@@ -1226,6 +1226,95 @@ func TestLiteralAssign(t *testing.T) {
 	assert.Equal(t, "W. Frank Ableson", arr.(map[string]interface{})["books"].(map[string]interface{})["authors"].([]interface{})[0])
 }
 
+func TestPrimitiveToObject(t *testing.T) {
+	mappingValue := `{
+   "mapping":{
+      "books":{
+		"authors":{
+			"@foreach($.books[0].authors, scopeName)":{
+			"name":"=$.books[0].authors[$loop.index]",
+			"name2": "=$loop[scopeName].data"
+  }	
+         }
+      }
+   }
+}`
+
+	arrayData := `[
+  {
+    "title": "Android",
+    "isbn": "1933988673",
+    "pageCount": 416,
+    "publishedDate": { "$date": "2009-04-01T00:00:00.000-0700" },
+    "status": "PUBLISH",
+    "authors": ["W. Frank Ableson", "Charlie Collins", "Robi Sen"],
+    "categories": ["Open Source", "Mobile"]
+  }
+  ]`
+
+	arrayMapping := make(map[string]interface{})
+	err := json.Unmarshal([]byte(mappingValue), &arrayMapping)
+	assert.Nil(t, err)
+	mappings := map[string]interface{}{"store": arrayMapping}
+	factory := NewFactory(resolver)
+	mapper, err := factory.NewMapper(mappings)
+	assert.Nil(t, err)
+
+	attrs := map[string]interface{}{"books": arrayData}
+	scope := data.NewSimpleScope(attrs, nil)
+	results, err := mapper.Apply(scope)
+	assert.Nil(t, err)
+
+	arr := results["store"]
+	assert.Equal(t, "W. Frank Ableson", arr.(map[string]interface{})["books"].(map[string]interface{})["authors"].([]interface{})[0].(map[string]interface{})["name"])
+	assert.Equal(t, "W. Frank Ableson", arr.(map[string]interface{})["books"].(map[string]interface{})["authors"].([]interface{})[0].(map[string]interface{})["name2"])
+
+}
+
+func TestIndexWithObject(t *testing.T) {
+	mappingValue := `{
+   "mapping":{
+      "books":{
+		"authors":{
+			"@foreach($.books[0].authors, scopeName)":{
+				"name":"=$.books2[0].authors[$loop.index]"
+			}	
+         }
+      }
+   }
+}`
+
+	arrayData := `[
+  {
+    "title": "Android",
+    "isbn": "1933988673",
+    "pageCount": 416,
+    "publishedDate": { "$date": "2009-04-01T00:00:00.000-0700" },
+    "status": "PUBLISH",
+    "authors": ["W. Frank Ableson", "Charlie Collins", "Robi Sen"],
+    "categories": ["Open Source", "Mobile"]
+  }
+  ]`
+
+	arrayMapping := make(map[string]interface{})
+	err := json.Unmarshal([]byte(mappingValue), &arrayMapping)
+	assert.Nil(t, err)
+	mappings := map[string]interface{}{"store": arrayMapping}
+	factory := NewFactory(resolver)
+	mapper, err := factory.NewMapper(mappings)
+	assert.Nil(t, err)
+
+	attrs := map[string]interface{}{"books": arrayData, "books2": arrayData}
+
+	scope := data.NewSimpleScope(attrs, nil)
+	results, err := mapper.Apply(scope)
+	assert.Nil(t, err)
+
+	arr := results["store"]
+	assert.Equal(t, "W. Frank Ableson", arr.(map[string]interface{})["books"].(map[string]interface{})["authors"].([]interface{})[0].(map[string]interface{})["name"])
+
+}
+
 func BenchmarkObj(b *testing.B) {
 
 	mappingValue := `{
@@ -1301,5 +1390,89 @@ func TestGetArrayNullCase(t *testing.T) {
 	v, err := mapper.Apply(scope)
 	assert.Nil(t, err)
 	assert.Equal(t, []interface{}{}, v["store"].(map[string]interface{})["array"])
+
+}
+
+func TestForeachFunction(t *testing.T) {
+	tests := []struct {
+		FunctionStr     string
+		ExpectSource    string
+		ExpectScopeName string
+		ExpectFilter    string
+	}{
+		{
+			FunctionStr:     "@foreach($.authors, authorLoop, $loop.age > 45)",
+			ExpectSource:    "$.authors",
+			ExpectScopeName: "authorLoop",
+			ExpectFilter:    "$loop.age > 45",
+		},
+		{
+			FunctionStr:     "@foreach($.authors)",
+			ExpectSource:    "$.authors",
+			ExpectScopeName: "",
+			ExpectFilter:    "",
+		},
+		{
+			FunctionStr:     "@foreach(array.create(\"a\", \"b\", \"c\"))",
+			ExpectSource:    "array.create(\"a\", \"b\", \"c\")",
+			ExpectScopeName: "",
+			ExpectFilter:    "",
+		},
+		{
+			FunctionStr:     "@foreach(array.create(\"a\", \"b\", \"c\"), array, $loop.color == \"red\")",
+			ExpectSource:    "array.create(\"a\", \"b\", \"c\")",
+			ExpectScopeName: "array",
+			ExpectFilter:    "$loop.color == \"red\"",
+		},
+		{
+			FunctionStr:     "@foreach(array.append(array.create(\"a\", \"b\", \"c\"), \"d\"), array, $loop.color == \"red\")",
+			ExpectSource:    "array.append(array.create(\"a\", \"b\", \"c\"), \"d\")",
+			ExpectScopeName: "array",
+			ExpectFilter:    "$loop.color == \"red\"",
+		},
+		{
+			FunctionStr:     "@foreach(array.append(array.create(\"a\", \"b\", \"c\"), \"d\"), array, array.sum($loop.color) == 20)",
+			ExpectSource:    "array.append(array.create(\"a\", \"b\", \"c\"), \"d\")",
+			ExpectScopeName: "array",
+			ExpectFilter:    "array.sum($loop.color) == 20",
+		},
+		{
+			FunctionStr:     "@foreach(array.append(array.create(\"a\", \"b\", \"c\"), \"d\"))",
+			ExpectSource:    "array.append(array.create(\"a\", \"b\", \"c\"), \"d\")",
+			ExpectScopeName: "",
+			ExpectFilter:    "",
+		},
+		{
+			FunctionStr:     "@foreach(array.append(array.create(\"a\", \"b\", \"c\"), \"d\"), array)",
+			ExpectSource:    "array.append(array.create(\"a\", \"b\", \"c\"), \"d\")",
+			ExpectScopeName: "array",
+			ExpectFilter:    "",
+		},
+		{
+			FunctionStr:     "@foreach(array.append(array.create(\"(((a\", \"b))\", \"c\"), \"d\"), array)",
+			ExpectSource:    "array.append(array.create(\"(((a\", \"b))\", \"c\"), \"d\")",
+			ExpectScopeName: "array",
+			ExpectFilter:    "",
+		},
+		{
+			FunctionStr:     "@foreach(array.append(array.create(\"\\\"a\\\"\", \"b\", \"c\"), \"d\"), array)",
+			ExpectSource:    "array.append(array.create(\"\\\"a\\\"\", \"b\", \"c\"), \"d\")",
+			ExpectScopeName: "array",
+			ExpectFilter:    "",
+		},
+		{
+			FunctionStr:     `@foreach(array.append(array.create('\"a\"', \"b\", \"c\"), \"d\"), array)`,
+			ExpectSource:    `array.append(array.create('\"a\"', \"b\", \"c\"), \"d\")`,
+			ExpectScopeName: "array",
+			ExpectFilter:    "",
+		},
+	}
+
+	for _, test := range tests {
+		source, scopeName, filter := getForeachFunc(test.FunctionStr)
+		assert.Equal(t, test.ExpectSource, source)
+		assert.Equal(t, test.ExpectScopeName, scopeName)
+		assert.Equal(t, test.ExpectFilter, filter)
+	}
 
 }

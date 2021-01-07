@@ -117,7 +117,6 @@ func (a *App) createTriggers(tConfigs []*trigger.Config, runner action.Runner) (
 			logger = log.ChildLoggerWithFields(logger, log.FieldString("triggerId", tConfig.Id))
 		}
 
-		log.ChildLogger(logger, tConfig.Id)
 		initCtx := &initContext{logger: logger, handlers: make([]trigger.Handler, 0, len(tConfig.Handlers))}
 
 		//create handlers for that trigger and init
@@ -210,7 +209,7 @@ func (a *App) createTriggers(tConfigs []*trigger.Config, runner action.Runner) (
 				}
 			}
 
-			handler, err := trigger.NewHandler(hConfig, acts, mapperFactory, expressionFactory, runner)
+			handler, err := trigger.NewHandler(hConfig, acts, mapperFactory, expressionFactory, runner, logger)
 			if err != nil {
 				return nil, fmt.Errorf("error creating handler [%s] in trigger [%s]:%s", hConfig.Name, tConfig.Id, err.Error())
 			}
